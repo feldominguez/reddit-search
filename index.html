@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>reddit Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class='container-fluid'>
+<div class='row red'>
+  <form name ='subreddit-search' class = 'text-center col-lg-6 col-lg-offset-3 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12 col-xs-offset-0'>
+    <a href='https://reddit.com' target='blank'><img class='img-rounded' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/500772/photo.png' width='24px'></a>
+<input id='box'type='textbox' placeholder='Type subreddit'></input>
+<input id='button' type = button value='go'>
+</form>
+</div>
+
+<script id='reddit-list-template' type='template/handlebars'>
+
+{{#each this}}
+<div class='row'>
+<div class='reddit-results col-xs-12 col-lg-8 col-lg-offset-2 col-md-9 col-md-offset-1'>
+<h4><a href='{{url}}' target='blank'>{{title}}</a></h4>
+<p>posted by: {{author}} |  comments: {{comments}} | {{archivedStatus}}</p> 
+{{#if text}}
+<button type='button' class='display-button'>see more</button>
+<p class='text'>{{text}}</p>
+{{/if}}
+  </div>
+  </div>
+
+{{/each}}
+
+</script>
+
+
+<div class='reddit-list'>
+  <div class='col-xs-6 col-xs-offset-3 opener text-center'><img class='img-rounded' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/500772/photo.png' width='100px'>
+    <h4>Welcome!</h4>
+    <p>Search your subreddit</p>
+</div>
+</div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
